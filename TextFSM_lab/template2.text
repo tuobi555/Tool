@@ -1,0 +1,10 @@
+Value Filldown SWNAME (B_SZ.*)
+Value Required Interface ((Fast|Gigabit)Ethernet.*[0-9]\/.*)
+Value Version (version 12.2)
+#Value List config (.*[^!])
+
+Start
+  ^hostname ${SWNAME}
+  ^interface ${Interface}$$
+  ^${Version}
+  ^!$$ -> Record
